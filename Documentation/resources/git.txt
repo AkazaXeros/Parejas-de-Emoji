@@ -1,0 +1,17 @@
+git branch                        - listado branch (con * la rama donde me encuentro)
+git branch <nombre_rama>          - crea una rama <nombre_rama> a partir de la rama actual
+git checkout -b <nombre_rama>     - sale de la rama actual, crea la rama <nombre_rama> y entra ne la rama creada
+
+git status                        - permite mirar los cambios
+git add .                         - pongo en stage mis cambios
+git commit -m "Desc. trabajo"     - creo commit con descripción del la funcionalidad implementada
+git push -u origin <nombre_rama>  - push de la rama a gitHub
+
+
+git branch -d <nombre_rama>       - elimina rama
+git branch -D <nombre_rama>       - elimina rama con cambios
+
+Historial de commits: 
+    git log 
+    git log --oneline
+    gitk (sudo apt install gitk)
