@@ -1,1 +1,0 @@
-# Parejas-de-Emoji

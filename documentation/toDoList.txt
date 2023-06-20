@@ -1,0 +1,28 @@
+emojis:
+🪐
+🚀
+👽
+🔭
+🛰️
+👾
+🌌
+🌠
+
+-Menu hamburguesa para la version móvil 
+    reglas del juego
+    Dificultad (niveles que establecen el juego a contrareloj)
+    extra: diferentes opciones de galeria de emojis para el juego
+
+-Attempts
+-Buttons
+    Reset (shuffle/attempts)
+    Dark mode
+    Language (EN/ES)
+
+-Footer
+    Developed by (linkedin/github profiles)
+    
+*El resultado final es el número de intentos realizados. Cuando menor sea esa puntuación (como mínimo puede ser 8) mejor
+
+CSS
+    Buscar por qué no nos está haciendo el efecto del giro

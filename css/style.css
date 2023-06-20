@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex-grow: 1;
+    /* hace que ocupe todo el espacio sobrante */
+    /* background-color: bisque; */
+    display: grid;
+    gap: 16px;
+    grid-template-columns: 120px 120px;
+    place-content: center;
+
+}
+
+article {
+    display: flex;
+    border: 1px solid black;
+    height: 150px;
+    width: 120px;
+    justify-content: center;
+    align-items: center;
+    /* transform-style: preserve-3d;
+    transition: all 1 ease-in-out; */
+}
+
+.card {
+    border-radius: 10px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: all 0.5;
+    /* ease-in-out */
+}
+
+.card .flipped {
+    transform: rotateY(180deg);
+    transition: all 1;
+    /* ease-in-out */
+}
+
+.front,
+.back {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+}
+
+.card .front {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* transform: rotateY(180deg); */
+}
+
+.card .back {
+    background-color: aquamarine;
+    border-radius: 10px;
+    backface-visibility: hidden;
+}
+
+
+
+/* 
+.hidden {
+    display: none;
+} */

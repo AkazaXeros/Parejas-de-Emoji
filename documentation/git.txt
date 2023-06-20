@@ -15,3 +15,7 @@ Historial de commits:
     git log 
     git log --oneline
     gitk (sudo apt install gitk)
+
+
+VER VIDEOS GIThub
+COMANDO - LO QUE HACE EL COMANDO
