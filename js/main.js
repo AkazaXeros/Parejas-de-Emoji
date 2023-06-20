@@ -1,47 +1,35 @@
 "use strict";
 
-const articleElement = document.querySelector("article")
-// const button = document.querySelector("#resetBtn")
-articleElement.addEventListener("click", reveal)
-
-//funcion que de la vuelta a la carta (article)
-function reveal(event) {
-    const currentCard = event.target;
-    // console.log(currentCard);
-    currentCard.classList.add("flipped");
-    // console.log(event);
-    console.log(currentCard);
+//Encontrar el value del data-name(string)
+let card2 = document.querySelectorAll(".front");
+for (let card of card2) {
+  let card2Value = card.getAttribute("data-name");
+  console.log(card2Value);
 }
 
-
-
+const articleElement = document.querySelectorAll("article");
 // console.log(articleElement);
 
-// *Here goes the conditional expression.
+// lograr que giren dos cartas (feito)
+for (let card of articleElement) {
+  card.addEventListener("click", reveal);
+  // es algo que tenemos que implementar
 
-//  1- If equal textContent, don't apply the setTimeOut function.
+  //   console.log(card);
+  //   if (card1 !== card2) {
+  //     setTimeout(() => {
+  //       card.classList.remove("flipped");
+  //     }, 1000);
+  //   }
+}
 
-// 1.1--find out the textContent of the tag element over which we are iterating.
+// lograr seleccionar las cartas.
 
+// lograr que las cartas se vuelvan a girar(feitiño)
+//funcion que de la vuelta a la carta (article) y a los 2sec la vuelva a girar
+function reveal(event) {
+  const currentCard = event.currentTarget;
+  currentCard.classList.add("flipped");
+}
 
-
-//array de obajetos emojis
-//funcion que nos los haga random
-//crear las cartas de manera dinamica
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// const button = document.querySelector("#resetBtn")

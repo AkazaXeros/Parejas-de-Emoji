@@ -1,78 +1,117 @@
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    min-height: 100vh;
-    min-width: 100vw;
-    display: flex;
-    flex-direction: column;
+  background-color: aqua;
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  flex-direction: column;
 }
 
 main {
-    flex-grow: 1;
-    /* hace que ocupe todo el espacio sobrante */
-    /* background-color: bisque; */
-    display: grid;
-    gap: 16px;
-    grid-template-columns: 120px 120px;
-    place-content: center;
-
+  flex-grow: 1;
+  /* hace que ocupe todo el espacio sobrante */
+  /* background-color: bisque; */
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 120px 120px;
+  place-content: center;
 }
 
 article {
-    display: flex;
-    border: 1px solid black;
-    height: 150px;
-    width: 120px;
-    justify-content: center;
-    align-items: center;
-    /* transform-style: preserve-3d;
-    transition: all 1 ease-in-out; */
+  display: flex;
+  border: 1px solid black;
+  height: 150px;
+  width: 120px;
+  justify-content: center;
+  align-items: center;
 }
 
 .card {
-    border-radius: 10px;
-    position: relative;
-    transform-style: preserve-3d;
-    transition: all 0.5;
-    /* ease-in-out */
+  border-radius: 10px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 1000ms;
+  /* ease-in-out */
 }
 
-.card .flipped {
-    transform: rotateY(180deg);
-    transition: all 1;
-    /* ease-in-out */
+.card.flipped {
+  transform: rotateY(180deg);
 }
 
 .front,
 .back {
-    backface-visibility: hidden;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-
+  backface-visibility: hidden;
+  position: absolute;
+  border-radius: 10px;
+  top: 0;
+  left: 0; /*para no tener problemas luego con el responsive */
+  height: 100%;
+  width: 100%;
 }
 
-.card .front {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* transform: rotateY(180deg); */
+.front {
+  background-color: lightcoral;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotateY(180deg);
+  /* position: absolute; */
 }
 
-.card .back {
-    background-color: aquamarine;
-    border-radius: 10px;
-    backface-visibility: hidden;
+.back {
+  background-image: url(/background/arena.jpg);
+  background-position: center center;
+  background-size: cover;
 }
 
+/* ease-in-out */
 
+/* .card .front {
+  display: flex;
+  justify-content: center;
+  align-items: center; */
+/* transform: rotateY(180deg); 
+}*/
+
+/* .card .back {
+  border-radius: 10px;
+  backface-visibility: hidden;
+} */
 
 /* 
 .hidden {
     display: none;
 } */
+
+/*Como hacer que las cartas se giren:
+
+//Ojo, Tengo que mirar y probar el background property de css. Probar linear-gradient(45deg, rgb(?,?,?), rgb(?,?,?)). Estudiarme su uso
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//Nota importante, el efecto de que los 2 contenedores, el que guarda el front y el que guarda el back se superpongan uno sobre el otro se logra:
+
+a) Dandole a su contenedor padre la position de relative para que se pongan en el mismo espacio pero se verian los 2 al mismo tiempo
+b) Para separarlos y que sean uno debajo y otro arriba hay que asignarles su position a absolute a los 2.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+1- body necesita espacio, idealmente 100vh
+
+2- darle espacio al contenedor de las cartas(el espacio donde van a ir cada una de las cartas)
+
+3- Cartas:
+- Darle tamaño al contendor de las cartas.(Donde van los contenedores de front y de back, en este caso card)
+-Asignarle al contenedor padre(card) un "transform-style: preserve-3d"
+
+3.1) Aqui empezamos a trabajar con los contendedores de front y de back especificamente
+
+- Darle todo el tamanno del contenedor padre al frente y back de la carta
+- Aqui hacer lo que dice en Nota importante
+- Darle border radius para que se curven las puntas
+-Darle "backface-visibility: hidden";  //Asi evito ver el contenido de la parte que se supone vaya debajo. Para que no se forme efecto espejo, necesito asignarle al contenedor padre(card) un "transform-style: preserve-3d". Esto hace 
+que cada cara sea unica y esten en el sentido correcto*/

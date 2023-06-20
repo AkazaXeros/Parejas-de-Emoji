@@ -25,4 +25,51 @@ emojis:
 *El resultado final es el número de intentos realizados. Cuando menor sea esa puntuación (como mínimo puede ser 8) mejor
 
 CSS
-    Buscar por qué no nos está haciendo el efecto del giro
+    Buscar por qué no nos está haciendo el efecto del giro (resuelto)
+
+
+
+Como hacer las cartas que giren:
+
+//Ojo, Tengo que mirar y probar el background property de css. Probar linear-gradient(45deg, rgb(?,?,?), rgb(?,?,?)). Estudiarme su uso
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//Nota importante, el efecto de que los 2 contenedores, el que guarda el front y el que guarda el back se superpongan uno sobre el otro se logra:
+
+a) Dandole a su contenedor padre la position de relative para que se pongan en el mismo espacio pero se verian los 2 al mismo tiempo
+b) Para separarlos y que sean uno debajo y otro arriba hay que asignarles su position a absolute a los 2.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+1- body necesita espacio, idealmente 100vh
+
+2- darle espacio al contenedor de las cartas(el espacio donde van a ir cada una de las cartas)
+
+3- Cartas:
+- Darle tamanno al contendor de las cartas.(Donde van los contenedores de front y de back, en este caso card)
+-Asignarle al contenedor padre(card) un "transform-style: preserve-3d"
+
+3.1) Aqui empezamos a trabajar con los contendedores de front y de back especificamente
+
+- Darle todo el tamanno del contenedor padre al frente y back de la carta
+- Aqui hacer lo que dice en Nota importante
+- Darle border radius para que se curven las puntas
+-Darle "backface-visibility: hidden";  //Asi evito ver el contenido de la parte que se supone vaya debajo. Para que no se forme efecto espejo, necesito asignarle al contenedor padre(card) un "transform-style: preserve-3d". Esto hace 
+que cada cara sea unica y esten en el sentido correcto
+
+
+- Darle estilo al frente y al back separados.
+3.a) Estilos separados:
+-Darle una imagen al back ded la carta
+-Darle un background-color al front de la carta. //Para que el back empiece escondido hay que darle un "transform: rotateY(180deg)". Asi ese contenedor empieza debajo
+
+
+4- Creando el efecto del giro
+
+-Para nuestro ejercicio necesitamos crear un "transform: rotateY(180deg)" dentro de la clase flipped, y eso se lo asignaremos 
+a la clase card, asi quedaria .card .flipped y cuando un contenedor carta tenga esa clase se le aplique el transform.
+-Para que el efecto no suceda inmediatamente tenemos que agregarle al contenedor card por defecto un
+ transition: transform 1500ms(el tiempo es el que querramos)
+
+
+//Dedicarle un cariño a la propiedad perspective de css. Hace que el giro sea mas real si se usa correctamente
