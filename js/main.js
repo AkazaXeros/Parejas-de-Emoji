@@ -53,6 +53,18 @@ function reveal(event) {
   }
 }
 
+/* cosas que nos faltan
+  - boton start
+  - array js con emojis 
+  - función match.random para barajar las cartas 
+  - modificar el juego ya creado para que llame a los emojis
+
+
+
+
+
+*/
+
 //For example, a data-abc-def attribute = data-name(del index) corresponds to dataset.abcDef = dataset.name
 
 // const articleElement = document.querySelectorAll("article");
