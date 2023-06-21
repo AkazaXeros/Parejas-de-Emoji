@@ -13,7 +13,7 @@
       <button id="resetBtn">Reset</button>
     </header>
     <!-- Vamos a crear 4 cartas de prueba para ver la funcionalidad -->
-    <main>
+    <main id="container">
       <article class="card">
         <section class="front" data-name="1">5</section>
         <section class="back"></section>
@@ -34,7 +34,10 @@
         <section class="back"></section>
       </article>
     </main>
+    <section id="attempts">
+      <p>Intentos: <span class="score"> </span></p>
+    </section>
 
-    <script src="js/main.js"></script>
+    <script src="js/main.js" type="module"></script>
   </body>
 </html>
