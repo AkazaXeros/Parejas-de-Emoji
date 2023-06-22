@@ -1,6 +1,47 @@
 "use strict";
+import { emojisArray } from "./data.js";
+
+const mainElement = document.querySelector("#container")
+const score = document.querySelector(".score");
+
+
+//VARIABLES GLOBALES
+let firstCard = null; // null porque  el valor aún no esta asignado
+let secondCard = null;
+let attempts = 0;
+let lockBoard = false; // teniamos un problema de que podiamos clicar dos veces a la primera carta, dandole así el valor de la primera carta a la segunda también y ya no seguia el juego. Tambien se podian clicar mas de dos cartas a la vez.
+
 
 //functions con export-import al main
+
+function suffledArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const randomIndex = Math.floor(Math.random() * (i + 1));
+        const randomItem = array[randomIndex];
+        array[randomIndex] = array[i];
+        array[i] = randomItem;
+    }
+    return array;
+  }
+  
+  function generateCards() {
+    //llamamos al main
+  
+    for (const objects of emojisArray) {
+        //crear el elemento article
+        const articleElement = document.createElement('article');
+        //añadir la class=card
+        articleElement.classList.add("card");
+        articleElement.innerHTML = `
+      <section class="front" data-name=${objects.id}> ${objects.emoji} </section>
+      <section class="back"></section>
+      `;
+        //(meterlo dentro del main) appendChild
+        mainElement.appendChild(articleElement);
+        articleElement.addEventListener("click", reveal);
+    }
+  }  
+
 
 // Creamos una función para revelar la carta y aplicar flipped
 function reveal(event) {
@@ -21,13 +62,11 @@ function reveal(event) {
     score.textContent = attempts; //actualiza el contador
     lockBoard = true;
     checkForMatch();
-
 }
 
 
 //*dataset use:
 //For example, a data-abc-def attribute (in index) corresponds to dataset.abcDef. So in this case data-name (in index) corresponds to dataset.name in JS
-
 
 
 //contador que aumente en uno cuando dos cartas se revelan (done)
@@ -44,33 +83,7 @@ function reset() {
 }
 
 // función para que las cartas se barajen. Es un función que se utiliza mucho. // de atrás hacia adelante va cambiando las posiciones de los elementos dentro del array aleatoriamente
-function suffledArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const randomIndex = Math.floor(Math.random() * (i + 1));
-        const randomItem = array[randomIndex];
-        array[randomIndex] = array[i];
-        array[i] = randomItem;
-    }
-    return array;
-}
 
-function generateCards() {
-    //llamamos al main
-
-    for (const objects of emojisArray) {
-        //crear el elemento article
-        const articleElement = document.createElement('article');
-        //añadir la class=card
-        articleElement.classList.add("card");
-        articleElement.innerHTML = `
-      <section class="front" data-name=${objects.id}> ${objects.emoji} </section>
-      <section class="back"></section>
-      `;
-        //(meterlo dentro del main) appendChild
-        mainElement.appendChild(articleElement);
-        articleElement.addEventListener("click", reveal);
-    }
-}
 
 //Esta función se encarga de quitarles el evento a las dos cartas que ya descubrimos siendo iguales
 function disableCards() {
@@ -101,3 +114,7 @@ function resetValues() {
     secondCard = null;
     lockBoard = false;
 }
+
+export {
+     suffledArray, generateCards, reset
+};
