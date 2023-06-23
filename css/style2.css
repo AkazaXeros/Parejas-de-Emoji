@@ -104,7 +104,7 @@ footer {
 }
 
 .card .back {
-  background-image: url(/background/card-background.jpg);
+  background-image: url(/img/card-background.jpg);
   background-position: center center;
   background-size: cover;
   backface-visibility: hidden;
