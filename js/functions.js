@@ -136,7 +136,7 @@ function hideAllPanel() {
 function showEnd() {
   showPanel(end);
   const text = end.querySelector('p');
-  text.textContent = `Felicidades, lo lograste en ${attempts} intentos.`;
+  text.textContent = `Congratulations, you made it in ${attempts} attempts.`;
   const endButton = end.querySelector('.homeBtn');
   endButton.addEventListener('click', () => {
     hideAllPanel();

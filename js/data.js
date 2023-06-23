@@ -6,31 +6,31 @@ export const emojisArray = [
     emoji: '🐼',
   },
   {
-    id: 'mapache',
+    id: 'raccoon',
     emoji: '🦝',
   },
   {
-    id: 'oso',
+    id: 'bear',
     emoji: '🐻',
   },
   {
-    id: 'zorro',
+    id: 'fox',
     emoji: '🦊',
   },
   {
-    id: 'leon',
+    id: 'lion',
     emoji: '🦁',
   },
   {
-    id: 'vaca',
+    id: 'cow',
     emoji: '🐮',
   },
   {
-    id: 'rana',
+    id: 'frog',
     emoji: '🐸',
   },
   {
-    id: 'raton',
+    id: 'mouse',
     emoji: '🐭',
   },
   {
@@ -38,31 +38,31 @@ export const emojisArray = [
     emoji: '🐼',
   },
   {
-    id: 'mapache',
+    id: 'raccoon',
     emoji: '🦝',
   },
   {
-    id: 'oso',
+    id: 'bear',
     emoji: '🐻',
   },
   {
-    id: 'zorro',
+    id: 'fox',
     emoji: '🦊',
   },
   {
-    id: 'leon',
+    id: 'lion',
     emoji: '🦁',
   },
   {
-    id: 'vaca',
+    id: 'cow',
     emoji: '🐮',
   },
   {
-    id: 'rana',
+    id: 'frog',
     emoji: '🐸',
   },
   {
-    id: 'raton',
+    id: 'mouse',
     emoji: '🐭',
   },
 ];

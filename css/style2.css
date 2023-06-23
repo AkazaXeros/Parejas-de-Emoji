@@ -8,14 +8,25 @@
 
 :root {
   --fontFamily: 'Amatic SC', sans-serif, cursive;
+  --green: #17594a;
+  --Awhite: antiquewhite;
+  --white: white;
+  --background: #12181f;
 }
 
+.day {
+  background-color: var(--Awhite);
+  font-family: var(--fontFamily);
+  color: var(--green);
+  /* el boton va de var:( --background); 
+  las letras de dentro del boton van var(--Awhite)*/
+}
 body {
   min-height: 100vh;
   min-width: 80vw;
-  background-color: #12181f;
-  border: 0.5rem solid white;
-  color: white;
+  background-color: var(--background);
+  border: 0.5rem solid var(--white);
+  color: var(--white);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -39,20 +50,44 @@ section#attempts {
 section.panel {
   min-height: 100vh;
   padding: 2rem;
-  border: 0.5rem solid white;
+  border: 0.5rem solid var(--white);
   font-size: 2rem;
   text-align: center;
-  display: grid;
-  place-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* display: grid;
+  place-content: center; */
 }
 
 section.start {
-  background-color: black;
-  color: white;
+  background-color: var(--background);
+  color: var(--white);
+  font-size: 3rem;
 }
 
-.cta {
-  padding: 1rem;
+p.rules {
+  /* display: flex;
+  flex-direction: row;
+  align-items: center; */
+  font-size: 2rem;
+  margin-top: 15px;
+}
+
+button#startBtn:hover {
+  background-color: var(--Awhite);
+  translate: 0 -5px;
+  cursor: all-scroll;
+}
+button#startBtn {
+  padding: 2px 80px;
+  border-radius: 15px;
+  font-size: 1.8rem;
+  font-family: var(--fontFamily);
+  color: var(--green);
+  transition: all 0.5s ease-in-out;
+
+  /* padding: 1rem;
   font-weight: 900;
   width: 20rem;
   display: block;
@@ -63,7 +98,7 @@ section.start {
   color: black;
   text-decoration: none;
   border: none;
-  text-transform: uppercase;
+  text-transform: uppercase; */
 }
 
 .panel.hidden {
@@ -86,12 +121,12 @@ button#resetBtn {
   border-radius: 15px;
   font-size: 1.8rem;
   font-family: var(--fontFamily);
-  color: #17594a;
+  color: var(--green);
   transition: all 0.5s ease-in-out;
 }
 
 button#resetBtn:hover {
-  background-color: antiquewhite;
+  background-color: var(--Awhite);
   translate: 0 -5px;
   cursor: pointer;
 }
@@ -165,6 +200,20 @@ footer {
   transform: rotateY(180deg);
 }
 
+section.end {
+  padding-top: 350px;
+  font-size: 1.5rem;
+}
+
+button.homeBtn {
+  padding: 2px 80px;
+  border-radius: 15px;
+  font-size: 1.8rem;
+  font-family: var(--fontFamily);
+  color: var(--green);
+  transition: all 0.5s ease-in-out;
+}
+
 @media screen and (min-width: 600px) {
   #container {
     grid-template-columns: repeat(4, 120px);
@@ -177,6 +226,9 @@ footer {
 
   .card .front {
     font-size: 40px;
+  }
+  section.end {
+    font-size: 2.5rem;
   }
 }
 
@@ -207,5 +259,9 @@ footer {
   }
   .card .front {
     font-size: 50px;
+  }
+
+  section.end {
+    font-size: 3.5rem;
   }
 }
