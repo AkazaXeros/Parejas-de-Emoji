@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
 * {
   margin: 0;
   padding: 0;
@@ -14,7 +14,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  font-family: "Amatic SC", cursive;
+  font-family: 'Amatic SC', cursive;
 }
 
 header {
@@ -102,5 +102,24 @@ button#resetBtn {
   padding: 8px 80px;
   border-radius: 10px;
   font-size: 1.5rem;
-  font-family: "Amatic SC", cursive;
+  font-family: 'Amatic SC', cursive;
 }
+
+/* 
+.grid-container {
+  display: grid;
+  justify-content: center;
+  grid-gap: 16px;
+  grid-template-columns: repeat(4, 140px);
+  grid-template-rows: repeat(2, calc(140px / 2 * 3));
+}
+
+.card {
+  height: calc(140px / 2 * 3);
+  width: 140px;
+  border-radius: 10px;
+  background-color: white;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease-in-out;
+} */

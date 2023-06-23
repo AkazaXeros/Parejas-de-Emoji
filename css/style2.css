@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -6,12 +8,13 @@
 
 body {
   min-height: 100vh;
-  min-width: 100vw;
+  min-width: 80vw;
   background-color: #12181f;
   color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  font-family: 'Amatic SC', sans-serif, cursive;
 }
 
 main {
@@ -22,7 +25,7 @@ main {
   align-items: center;
 }
 
-article#attempt-restart {
+section#attempts {
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -30,19 +33,29 @@ article#attempt-restart {
 
 h1 {
   font-weight: 700;
-  font-size: 50px;
+  font-size: 3.1rem;
   text-align: center;
   padding-top: 2rem;
 }
 
-p {
+h2 {
   text-align: center;
-  font-size: 30px;
+  font-size: 2rem;
+}
+
+button#resetBtn {
+  padding: 2px 80px;
+  border-radius: 10px;
+  font-size: 1.8rem;
+  font-family: 'Amatic SC', cursive;
+  color: #17594a;
   font-weight: bold;
 }
 
-footer p {
-  padding-bottom: 2rem;
+footer {
+  padding: 2rem;
+  text-align: center;
+  font-size: 1.3rem;
 }
 
 .actions {
@@ -50,34 +63,22 @@ footer p {
   justify-content: center;
 }
 
-.actions button {
-  padding: 8px 16px;
-  font-size: 30px;
-  border-radius: 10px;
-  background-color: #27ae60;
-  color: white;
-}
-
 #container {
   display: grid;
+  width: 80%;
+  margin: 20px auto;
+  gap: 10px;
   justify-content: center;
-  grid-gap: 16px;
-  grid-template-columns: repeat(4, 140px);
-  grid-template-rows: repeat(2, calc(140px / 2 3));
+  grid-template-columns: repeat(4, 80px);
+  grid-template-rows: repeat(4, 120px);
 }
 
 .card {
-  height: calc(140px / 2 * 3);
-  width: 140px;
+  height: 120px;
   border-radius: 10px;
-  background-color: white;
   position: relative;
   transform-style: preserve-3d;
   transition: all 0.5s ease-in-out;
-}
-
-.front-image {
-  font-size: 50px;
 }
 
 .card.flipped {
@@ -95,9 +96,11 @@ footer p {
   width: 100%;
 }
 .card .front {
+  background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 30px;
 }
 
 .card .back {
@@ -109,4 +112,33 @@ footer p {
 
 .card .front {
   transform: rotateY(180deg);
+}
+
+@media screen and (min-width: 600px) {
+  #container {
+    grid-template-columns: repeat(4, 120px);
+    grid-template-rows: repeat(2, calc(120px / 2 * 3));
+  }
+
+  .card {
+    height: calc(120px / 2 * 3);
+  }
+
+  .card .front {
+    font-size: 40px;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  #container {
+    grid-template-columns: repeat(4, 140px);
+    grid-template-rows: repeat(2, calc(140px / 2 * 3));
+  }
+
+  .card {
+    height: calc(140px / 2 * 3);
+  }
+  .card .front {
+    font-size: 50px;
+  }
 }
