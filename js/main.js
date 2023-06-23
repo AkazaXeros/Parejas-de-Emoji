@@ -1,20 +1,18 @@
-"use strict";
+'use strict';
 
-import { emojisArray } from "./data.js";
-import {  suffledArray, generateCards, reset } from "./functions.js"
-
-let attempts = 0;
-
+import { showCenter, hideAllPanel, showPanel } from './functions.js';
 
 //MANIPULACIÓN DEL DOM
-const score = document.querySelector(".score");
-const resetBtn = document.querySelector('#resetBtn');
+const start = document.querySelector('.start');
 
-resetBtn.addEventListener("click", reset);
+main();
 
-score.textContent = attempts; //inicializamos el contador
+function main() {
+  showPanel(start);
+  const startButton = start.querySelector('#startBtn');
 
-
-suffledArray(emojisArray);
-generateCards();
-
+  startButton.addEventListener('click', () => {
+    hideAllPanel();
+    showCenter();
+  });
+}

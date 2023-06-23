@@ -6,15 +6,20 @@
   box-sizing: border-box;
 }
 
+:root {
+  --fontFamily: 'Amatic SC', sans-serif, cursive;
+}
+
 body {
   min-height: 100vh;
   min-width: 80vw;
   background-color: #12181f;
+  border: 0.5rem solid white;
   color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-family: 'Amatic SC', sans-serif, cursive;
+  font-family: var(--fontFamily);
 }
 
 main {
@@ -31,8 +36,41 @@ section#attempts {
   gap: 2rem;
 }
 
+section.panel {
+  min-height: 100vh;
+  padding: 2rem;
+  border: 0.5rem solid white;
+  font-size: 2rem;
+  text-align: center;
+  display: grid;
+  place-content: center;
+}
+
+section.start {
+  background-color: black;
+  color: white;
+}
+
+.cta {
+  padding: 1rem;
+  font-weight: 900;
+  width: 20rem;
+  display: block;
+  margin: 0 auto;
+  font-size: 1.5rem;
+  margin: 4rem auto 0 auto;
+  background-color: white;
+  color: black;
+  text-decoration: none;
+  border: none;
+  text-transform: uppercase;
+}
+
+.panel.hidden {
+  display: none;
+}
+
 h1 {
-  font-weight: 700;
   font-size: 3.1rem;
   text-align: center;
   padding-top: 2rem;
@@ -45,11 +83,17 @@ h2 {
 
 button#resetBtn {
   padding: 2px 80px;
-  border-radius: 10px;
+  border-radius: 15px;
   font-size: 1.8rem;
-  font-family: 'Amatic SC', cursive;
+  font-family: var(--fontFamily);
   color: #17594a;
-  font-weight: bold;
+  transition: all 0.5s ease-in-out;
+}
+
+button#resetBtn:hover {
+  background-color: antiquewhite;
+  translate: 0 -5px;
+  cursor: pointer;
 }
 
 footer {
@@ -79,10 +123,17 @@ footer {
   position: relative;
   transform-style: preserve-3d;
   transition: all 0.5s ease-in-out;
+  cursor: pointer;
 }
 
 .card.flipped {
   transform: rotateY(180deg);
+}
+
+.card:hover:not(.flipped) {
+  /* translate: 0 -5px; */
+  transform: scale(1.05);
+  z-index: 10;
 }
 
 .front,
@@ -130,9 +181,25 @@ footer {
 }
 
 @media screen and (min-width: 900px) {
+  h1 {
+    font-size: 5rem;
+  }
+  h2 {
+    font-size: 3.5rem;
+  }
+  footer {
+    font-size: 3rem;
+  }
+
   #container {
     grid-template-columns: repeat(4, 140px);
     grid-template-rows: repeat(2, calc(140px / 2 * 3));
+  }
+
+  button#resetBtn {
+    padding: 8px 160px;
+    border-radius: 15px;
+    font-size: 2.5rem;
   }
 
   .card {
