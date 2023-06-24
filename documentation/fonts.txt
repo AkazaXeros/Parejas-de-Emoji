@@ -1,0 +1,20 @@
+FONTS AND COLORS
+
+
+Fuente de Google Fonts
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
+</style>
+font-family: 'Amatic SC', cursive;
+
+Fuente de Google Fonts (minúscula)
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+</style>
+
+font-family: 'Shadows Into Light', cursive;
+
+----------------------------------------------------------------------------------------
+
+Página para linear gradient
+https://cssgradient.io/swatches/

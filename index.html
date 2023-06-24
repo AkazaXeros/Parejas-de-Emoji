@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="Memory Card Game"
+      content="Excellent game for training memory. Based on cards and emojis images"
+    />
+    <title>Emojis couples</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="/img/final-favicon-modified.png" />
+  </head>
+
+  <body>
+    <section class="panel start hidden">
+      <p id="welcome">Welcome to the memory card game</p>
+      <p class="objetive">
+        The goal of the game is to match all the pairs of emojis by flipping the
+        cards.
+      </p>
+      <button id="startBtn" class="cta">Start</button>
+    </section>
+
+    <main class="panel center hidden">
+      <header>
+        <h1>Memory Card Game</h1>
+        <div id="theme" src="" alt="Icon theme"></div>
+      </header>
+
+      <section id="container"></section>
+
+      <section id="attempts">
+        <h2>Attempts: <span class="score"> </span></h2>
+        <button id="resetBtn">Reset</button>
+      </section>
+
+      <footer>Developed by ©Nur, San, Sus, and Will 2023</footer>
+    </main>
+    <section class="panel end hidden">
+      <p id="congrats">Congratulations!!!</p>
+      <p id="empty"></p>
+      <button class="homeBtn cta">Home</button>
+    </section>
+
+    <script src="/js/main.js" type="module"></script>
+  </body>
+</html>

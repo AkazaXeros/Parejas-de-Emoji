@@ -3,7 +3,7 @@ git branch <nombre_rama>          - crea una rama <nombre_rama> a partir de la r
 git checkout -b <nombre_rama>     - sale de la rama actual, crea la rama <nombre_rama> y entra ne la rama creada
 
 git status                        - permite mirar los cambios
-git add .                         - pongo en stage mis cambios
+git add .                         - pongo en stage mis cambios 
 git commit -m "Desc. trabajo"     - creo commit con descripción del la funcionalidad implementada
 git push -u origin <nombre_rama>  - push de la rama a gitHub
 
@@ -15,3 +15,16 @@ Historial de commits:
     git log 
     git log --oneline
     gitk (sudo apt install gitk)
+
+DESCARGAR UNA RAMA DE GIT
+git branch -r                     -Para hacer el download de un branch de remoto    
+                                primero tienes que asegurarte que exista.Para ver los branches de remoto:
+
+git checkout nombre_rama          -Luego haces el checkout al branch que desees. Te hará el download y te pondrá en 
+                                   la branch que has indicado
+
+git pull (bajar)
+git push (subir)
+
+VER VIDEOS GIThub
+COMANDO - LO QUE HACE EL COMANDO

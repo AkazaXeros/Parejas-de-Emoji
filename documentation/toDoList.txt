@@ -1,0 +1,10 @@
+ cosas que nos faltan:
+  - pantalla start (done)
+  - pantalla end (done)
+  - array js con emojis (hecho)
+  - función Math.random para barajar las cartas  (done)
+  - modificar el juego ya creado para que llame a los emojis (done)
+  - tenemos que modularizar el codigo (done)
+  - lograr que giren dos cartas (feito)
+  - lograr seleccionar las cartas (done)
+  - lograr que las cartas se vuelvan a girar(feitiño)

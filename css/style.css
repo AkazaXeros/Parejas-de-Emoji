@@ -1,0 +1,378 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --fontFamily: 'Amatic SC', sans-serif, cursive;
+  --green: #17594a;
+  --Awhite: antiquewhite;
+  --white: white;
+  --background: #12181f;
+  --darkGreen: #2e4f4f;
+}
+
+/* -----------Animation-------------- */
+#congrats {
+  position: relative;
+  animation: moveToRight 1s ease-out;
+}
+
+#empty {
+  position: relative;
+  animation: moveToRight 2s ease-out;
+}
+
+@keyframes moveToRight {
+  0% {
+    opacity: 0;
+    left: -10000px;
+  }
+  100% {
+    opacity: 1;
+    left: 0;
+  }
+}
+/* ------------------------------- */
+
+.day {
+  background-color: var(--Awhite);
+  font-family: var(--fontFamily);
+  color: var(--green);
+  /* el boton va de var:( --background); 
+  las letras de dentro del boton van var(--Awhite)*/
+}
+
+body {
+  min-height: 100vh;
+  min-width: 80vw;
+  background-color: var(--background);
+  border: 0.5rem solid var(--white);
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: var(--fontFamily);
+}
+
+/* -----------------Theme----------------------------- */
+body.day {
+  color: var(--background);
+  background-color: whitesmoke;
+  border: 0.5rem solid var(--background);
+}
+
+body.day div#theme {
+  background-image: url(/img/midnight1.png);
+}
+
+div#theme {
+  height: 30px;
+  width: 30px;
+  background-image: url(/img/eclipse.png);
+  background-position: center center;
+  background-size: contain;
+}
+
+button#resetBtn.day {
+  background-color: var(--darkGreen);
+  color: var(--Awhite);
+}
+/* ---------------------------------------------------- */
+
+header {
+  padding-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+section#attempts {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+section.panel {
+  min-height: 100vh;
+  padding: 2rem;
+  border: 0.5rem solid var(--white);
+  font-size: 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+section.start,
+section.end {
+  background-color: var(--background);
+  color: var(--white);
+  font-size: 3rem;
+}
+
+p.objetive,
+p#empty {
+  font-family: 'Shadows Into Light', sans-serif, cursive;
+  font-size: 1.8rem;
+  max-width: 30ch;
+  transition: translate 5s ease-in-out;
+}
+
+p#congrats {
+  font-size: 2.8rem;
+  translate: 0 -20px;
+  translate: 0 0;
+}
+
+button#startBtn:hover,
+button.homeBtn:hover {
+  background-color: var(--Awhite);
+  translate: 0 -5px;
+  cursor: pointer;
+}
+button#startBtn {
+  padding: 2px 80px;
+  border-radius: 15px;
+  font-size: 1.8rem;
+  font-family: var(--fontFamily);
+  color: var(--green);
+  transition: all 0.5s ease-in-out;
+}
+
+.panel.hidden {
+  display: none;
+}
+
+h1 {
+  font-size: 2.8rem;
+}
+
+h2 {
+  text-align: center;
+  font-size: 2rem;
+}
+
+button#resetBtn {
+  padding: 2px 80px;
+  border-radius: 15px;
+  font-size: 1.8rem;
+  font-family: var(--fontFamily);
+  color: var(--green);
+  transition: all 0.5s ease-in-out;
+}
+
+button#resetBtn:hover {
+  translate: 0 -5px;
+  cursor: pointer;
+}
+
+footer {
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+}
+
+#container {
+  display: grid;
+  width: 80%;
+  margin: 20px auto;
+  gap: 10px;
+  justify-content: center;
+  grid-template-columns: repeat(4, 80px);
+  grid-template-rows: repeat(4, 120px);
+}
+
+.card {
+  height: 120px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 5px var(--background);
+  position: relative;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.card.flipped {
+  transform: rotateY(180deg);
+}
+
+.card:hover:not(.flipped) {
+  /* translate: 0 -5px; */
+  transform: scale(1.05);
+  z-index: 10;
+}
+
+.front,
+.back {
+  backface-visibility: hidden;
+  position: absolute;
+  border-radius: 10px;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+.card .front {
+  background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+}
+
+.card .back {
+  background-image: url(/img/card-background.jpg);
+  background-position: center center;
+  background-size: cover;
+  backface-visibility: hidden;
+}
+
+.card .front {
+  transform: rotateY(180deg);
+}
+
+button.homeBtn {
+  padding: 2px 80px;
+  border-radius: 15px;
+  font-size: 1.8rem;
+  font-family: var(--fontFamily);
+  color: var(--green);
+  background-color: white;
+  transition: all 0.5s ease-in-out;
+}
+
+@media screen and (max-width: 380px) {
+  #container {
+    grid-template-columns: repeat(4, 60px);
+    grid-template-rows: repeat(2, calc(60px / 2 * 3));
+  }
+
+  .card {
+    height: calc(60px / 2 * 3);
+  }
+}
+
+@media screen and (min-width: 600px) {
+  h1 {
+    font-size: 3.6rem;
+  }
+  #container {
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: repeat(2, calc(100px / 2 * 3));
+  }
+
+  div#theme {
+    position: static;
+    right: 10%;
+    top: 7%;
+    height: 35px;
+    width: 35px;
+  }
+
+  .card {
+    height: calc(100px / 2 * 3);
+  }
+
+  .card .front {
+    font-size: 40px;
+  }
+
+  section.start {
+    padding-top: 80px;
+  }
+
+  p#welcome,
+  p#congrats {
+    font-size: 3.6rem;
+  }
+  p.objetive,
+  p#empty {
+    font-size: 2rem;
+    max-width: 45ch;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  header {
+    width: 90vw;
+    justify-content: center;
+    gap: 6rem;
+  }
+  h1 {
+    font-size: 5.5rem;
+  }
+
+  h2 {
+    font-size: 3.3rem;
+  }
+
+  footer {
+    font-size: 2.4rem;
+  }
+
+  section#attempts {
+    width: 90vw;
+    flex-direction: row;
+    justify-content: center;
+    gap: 90px;
+  }
+
+  div#theme {
+    position: static;
+    right: 9%;
+    top: 9%;
+    height: 50px;
+    width: 50px;
+  }
+
+  button#resetBtn,
+  button#startBtn,
+  button#homeBtn {
+    padding: 5px 90px;
+    border-radius: 15px;
+    font-size: 2rem;
+  }
+
+  button#startBtn,
+  button.homeBtn {
+    margin-bottom: 40px;
+  }
+
+  section.start,
+  section.end {
+    font-size: 5.5rem;
+    padding-top: 80px;
+  }
+
+  p#welcome,
+  p#congrats {
+    font-size: 5.5rem;
+  }
+
+  p.objetive,
+  p#empty {
+    font-size: 2.3rem;
+    max-width: 50ch;
+  }
+}
