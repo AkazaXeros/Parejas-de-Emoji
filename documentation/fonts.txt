@@ -7,6 +7,13 @@ Fuente de Google Fonts
 </style>
 font-family: 'Amatic SC', cursive;
 
+Fuente de Google Fonts (minúscula)
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+</style>
+
+font-family: 'Shadows Into Light', cursive;
+
 ----------------------------------------------------------------------------------------
 
 Página para linear gradient

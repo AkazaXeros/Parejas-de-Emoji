@@ -7,6 +7,8 @@ const start = document.querySelector('.start');
 const center = document.querySelector('.center');
 const end = document.querySelector('.end');
 const resetBtn = document.querySelector('#resetBtn');
+const bodyElement = document.querySelector('body');
+const homeBtn = document.querySelector('.homeBtn');
 
 //VARIABLES GLOBALES
 let firstCard = null; // null porque  el valor aún no esta asignado
@@ -14,6 +16,16 @@ let secondCard = null;
 let attempts = 0;
 let pairsDiscovered = 0;
 let lockBoard = false; // teniamos un problema de que podiamos clicar dos veces a la primera carta, dandole así el valor de la primera carta a la segunda también y ya no seguia el juego. Tambien se podian clicar mas de dos cartas a la vez.
+
+//---------------Theme-----------------
+
+const themeElement = document.querySelector('#theme');
+
+themeElement.addEventListener('click', (event) => {
+  bodyElement.classList.toggle('day');
+  resetBtn.classList.toggle('day');
+  homeBtn.classList.toggle('day');
+});
 
 //--------------------------------------------
 
@@ -135,8 +147,8 @@ function hideAllPanel() {
 
 function showEnd() {
   showPanel(end);
-  const text = end.querySelector('p');
-  text.textContent = `Congratulations, you made it in ${attempts} attempts.`;
+  const text = end.querySelector('#empty');
+  text.textContent = `You made it in " ${attempts} " attempts.`;
   const endButton = end.querySelector('.homeBtn');
   endButton.addEventListener('click', () => {
     hideAllPanel();
