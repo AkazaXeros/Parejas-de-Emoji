@@ -178,7 +178,6 @@ button#resetBtn {
 }
 
 button#resetBtn:hover {
-  background-color: var(--Awhite);
   translate: 0 -5px;
   cursor: pointer;
 }
@@ -263,6 +262,17 @@ button.homeBtn {
   transition: all 0.5s ease-in-out;
 }
 
+@media screen and (max-width: 380px) {
+  #container {
+    grid-template-columns: repeat(4, 60px);
+    grid-template-rows: repeat(2, calc(60px / 2 * 3));
+  }
+
+  .card {
+    height: calc(60px / 2 * 3);
+  }
+}
+
 @media screen and (min-width: 600px) {
   h1 {
     font-size: 3.6rem;
@@ -273,9 +283,9 @@ button.homeBtn {
   }
 
   div#theme {
-    position: absolute;
-    right: 70px;
-    top: 63px;
+    position: static;
+    right: 10%;
+    top: 7%;
     height: 35px;
     width: 35px;
   }
@@ -329,9 +339,9 @@ button.homeBtn {
   }
 
   div#theme {
-    position: absolute;
-    right: 70px;
-    top: 120px;
+    position: static;
+    right: 9%;
+    top: 9%;
     height: 50px;
     width: 50px;
   }
