@@ -129,7 +129,7 @@ function checkForMatch() {
       secondCard.querySelector('.front').dataset.name;
     isMatch ? disableCards() : unReveal();
   }
-  if (pairsDiscovered === 1) {
+  if (pairsDiscovered === 8) {
     setTimeout(() => {
       hideAllPanel();
       showEnd();

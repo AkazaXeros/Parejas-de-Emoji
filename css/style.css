@@ -17,6 +17,29 @@
   --darkGreen: #2e4f4f;
 }
 
+/* -----------Animation-------------- */
+#congrats {
+  position: relative;
+  animation: moveToRight 1s ease-out;
+}
+
+#empty {
+  position: relative;
+  animation: moveToRight 2s ease-out;
+}
+
+@keyframes moveToRight {
+  0% {
+    opacity: 0;
+    left: -10000px;
+  }
+  100% {
+    opacity: 1;
+    left: 0;
+  }
+}
+/* ------------------------------- */
+
 .day {
   background-color: var(--Awhite);
   font-family: var(--fontFamily);
@@ -108,10 +131,13 @@ p#empty {
   font-family: 'Shadows Into Light', sans-serif, cursive;
   font-size: 1.8rem;
   max-width: 30ch;
+  transition: translate 5s ease-in-out;
 }
 
 p#congrats {
   font-size: 2.8rem;
+  translate: 0 -20px;
+  translate: 0 0;
 }
 
 button#startBtn:hover,
@@ -238,13 +264,24 @@ button.homeBtn {
 }
 
 @media screen and (min-width: 600px) {
+  h1 {
+    font-size: 3.6rem;
+  }
   #container {
-    grid-template-columns: repeat(4, 120px);
-    grid-template-rows: repeat(2, calc(120px / 2 * 3));
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: repeat(2, calc(100px / 2 * 3));
+  }
+
+  div#theme {
+    position: absolute;
+    right: 70px;
+    top: 63px;
+    height: 35px;
+    width: 35px;
   }
 
   .card {
-    height: calc(120px / 2 * 3);
+    height: calc(100px / 2 * 3);
   }
 
   .card .front {
@@ -252,11 +289,12 @@ button.homeBtn {
   }
 
   section.start {
-    font-size: 3.6rem;
     padding-top: 80px;
   }
-  section.end {
-    font-size: 2.5rem;
+
+  p#welcome,
+  p#congrats {
+    font-size: 3.6rem;
   }
   p.objetive,
   p#empty {
@@ -280,7 +318,7 @@ button.homeBtn {
   }
 
   footer {
-    font-size: 2.8rem;
+    font-size: 2.4rem;
   }
 
   section#attempts {
@@ -293,18 +331,15 @@ button.homeBtn {
   div#theme {
     position: absolute;
     right: 70px;
-    top: 85px;
+    top: 120px;
     height: 50px;
     width: 50px;
-    background-image: url(/img/eclipse.png);
-    background-position: center;
-    background-size: cover;
   }
 
   button#resetBtn,
   button#startBtn,
   button#homeBtn {
-    padding: 6px 90px;
+    padding: 5px 90px;
     border-radius: 15px;
     font-size: 2rem;
   }
