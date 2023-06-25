@@ -1,5 +1,4 @@
 'use strict';
-
 export const emojisArray = [
   {
     id: 'panda',
@@ -74,23 +73,23 @@ export const languages = {
     goal: 'The goal of the game is to match all the pairs of emojis by flipping the cards.',
     buttonStart: 'START',
     secondTitle: 'MEMORY CARD GAME',
-    attempts: 'ATTEMPTS',
+    attempts: 'ATTEMPTS: ',
     buttonReset: 'RESET',
     thirdTitle: 'CONGRATULATIONS!!!',
-    textFinal: 'You made ir in "" attempts.',
+    textFinal: `The attempts taken to do it have been `,
     buttonHome: 'HOME',
   },
 
   spanish: {
     selector: 'ES',
-    firstTitle: 'BIENVENIDO AL JUEGO MEMORIA DE CARTAS',
-    goal: 'El objetivo del juego es encontrar todas las parejas de emojis volteando la carta.',
+    firstTitle: 'BIENVENIDO AL JUEGO PAREJAS DE CARTAS',
+    goal: 'El objetivo del juego es encontrar todas las parejas de emojis volteando las cartas.',
     buttonStart: 'EMPEZAR',
-    secondTitle: 'JUEGO MEMORIA DE CARTAS',
-    attempts: 'INTENTOS',
+    secondTitle: 'PAREJAS DE CARTAS',
+    attempts: 'INTENTOS: ',
     buttonReset: 'RESETEAR',
     thirdTitle: 'FELICIDADES!!!',
-    textFinal: `Lo has hecho en ${attempts} intentos.`,
-    buttonHome: 'CASA',
+    textFinal: `Los intentos que te ha tomado han sido`,
+    buttonHome: 'INICIO',
   },
 };

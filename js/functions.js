@@ -10,11 +10,27 @@ const end = document.querySelector('.end');
 const resetBtn = document.querySelector('#resetBtn');
 const bodyElement = document.querySelector('body');
 const homeBtn = document.querySelector('.homeBtn');
+//----------------------------------------------------
+const languagesElement = document.getElementById('language');
+const link = document.querySelectorAll('a'); // me devuelve un array al seleccionar mas de un elemento
+
+// elementos de la primera pantalla
+const title = document.getElementById('welcome');
+const goal = document.querySelector('.objetive');
+const btnStart = document.getElementById('startBtn');
+
+// elementos de la segunda pantalla
+const secondTitle = document.querySelector('.title');
+const contador = document.getElementById('attemptsH2');
+
+// elementos de la tercera pantalla
+const congrats = document.getElementById('congrats');
+const textFinal = document.getElementById('empty');
 
 //VARIABLES GLOBALES
 let firstCard = null; // null porque  el valor aún no esta asignado
 let secondCard = null;
-let attempts = 0;
+export let attempts = 0;
 let pairsDiscovered = 0;
 let lockBoard = false; // teniamos un problema de que podiamos clicar dos veces a la primera carta, dandole así el valor de la primera carta a la segunda también y ya no seguia el juego. Tambien se podian clicar mas de dos cartas a la vez.
 
@@ -130,7 +146,7 @@ function checkForMatch() {
       secondCard.querySelector('.front').dataset.name;
     isMatch ? disableCards() : unReveal();
   }
-  if (pairsDiscovered === 8) {
+  if (pairsDiscovered === 1) {
     setTimeout(() => {
       hideAllPanel();
       showEnd();
@@ -149,7 +165,11 @@ function hideAllPanel() {
 function showEnd() {
   showPanel(end);
   const text = end.querySelector('#empty');
-  text.textContent = `You made it in " ${attempts} " attempts.`;
+  const aTag = document.querySelector('.active');
+  const attr = aTag.getAttribute('language');
+  const finalMessage = languages[attr].textFinal;
+  console.log(finalMessage);
+  text.textContent = `${finalMessage} "${attempts}".`;
   const endButton = end.querySelector('.homeBtn');
   endButton.addEventListener('click', () => {
     hideAllPanel();
@@ -184,35 +204,7 @@ function resetValues() {
   lockBoard = false;
 }
 
-export {
-  suffledArray,
-  generateCards,
-  reset,
-  main,
-  hideAllPanel,
-  showCenter,
-  showPanel,
-};
-
 // -----------------------------------
-// variables para seleccionar cada elemento
-
-const languagesElement = document.getElementById('language');
-const link = document.querySelectorAll('a'); // me devuelve un array al seleccionar mas de un elemento
-
-// elementos de la primera pantalla
-const title = document.getElementById('welcome');
-const goal = document.querySelector('.objetive');
-const btnStart = document.getElementById('startBtn');
-
-// elementos de la segunda pantalla
-const secondTitle = document.querySelector('.title');
-const contador = document.getElementById('attempts');
-
-// elementos de la tercera pantalla
-const congrats = document.getElementById('congrats');
-const textFinal = document.getElementById('empty');
-
 // función con evento click para poder modificar el idioma
 link.forEach((event) => {
   event.addEventListener('click', () => {
@@ -237,3 +229,5 @@ link.forEach((event) => {
     homeBtn.textContent = languages[attr].buttonHome;
   });
 });
+
+export { hideAllPanel, showCenter, showPanel };
