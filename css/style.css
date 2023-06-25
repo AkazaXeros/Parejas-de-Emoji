@@ -13,6 +13,7 @@
   --green: #17594a;
   --Awhite: antiquewhite;
   --white: white;
+  --day: whitesmoke;
   --background: #12181f;
   --darkGreen: #2e4f4f;
 }
@@ -63,7 +64,7 @@ body {
 /* -----------------Theme----------------------------- */
 body.day {
   color: var(--background);
-  background-color: whitesmoke;
+  background-color: var(--day);
   border: 0.5rem solid var(--background);
 }
 
@@ -102,12 +103,6 @@ main {
   align-items: center;
 }
 
-section#attempts {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
 section.panel {
   min-height: 100vh;
   padding: 2rem;
@@ -118,6 +113,37 @@ section.panel {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+}
+
+/*-----------LANGUAGES--------------*/
+div#language {
+  display: flex;
+  gap: 2rem;
+}
+
+div#language a {
+  color: var(--white);
+  font-size: 2rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+div#tries {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+div#tries > p {
+  font-size: 2rem;
+}
+/*------------------------*/
+
+section#attempts {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 section.start,
@@ -137,8 +163,6 @@ p#empty {
 
 p#congrats {
   font-size: 2.8rem;
-  translate: 0 -20px;
-  translate: 0 0;
 }
 
 button#startBtn:hover,
@@ -160,7 +184,7 @@ button#startBtn {
   display: none;
 }
 
-h1 {
+h1.title {
   font-size: 2.8rem;
 }
 
@@ -275,7 +299,7 @@ button.homeBtn {
 }
 
 @media screen and (min-width: 600px) {
-  h1 {
+  h1.title {
     font-size: 3.6rem;
   }
   #container {
@@ -285,8 +309,6 @@ button.homeBtn {
 
   div#theme {
     position: static;
-    right: 10%;
-    top: 7%;
     height: 35px;
     width: 35px;
   }
@@ -317,10 +339,10 @@ button.homeBtn {
 @media screen and (min-width: 900px) {
   header {
     width: 90vw;
-    justify-content: center;
     gap: 6rem;
   }
-  h1 {
+
+  h1.title {
     font-size: 5.5rem;
   }
 
@@ -339,17 +361,24 @@ button.homeBtn {
     gap: 90px;
   }
 
+  #container {
+    grid-template-columns: repeat(4, 120px);
+    grid-template-rows: repeat(2, calc(120px / 2 * 3));
+  }
+
   div#theme {
     position: static;
-    right: 9%;
-    top: 9%;
-    height: 50px;
-    width: 50px;
+    height: 35px;
+    width: 35px;
+  }
+
+  .card {
+    height: calc(120px / 2 * 3);
   }
 
   button#resetBtn,
   button#startBtn,
-  button#homeBtn {
+  button.homeBtn {
     padding: 5px 90px;
     border-radius: 15px;
     font-size: 2rem;
@@ -375,5 +404,9 @@ button.homeBtn {
   p#empty {
     font-size: 2.3rem;
     max-width: 50ch;
+  }
+
+  div#tries > p {
+    font-size: 3.2rem;
   }
 }

@@ -1,5 +1,6 @@
 'use strict';
 import { emojisArray } from './data.js';
+import { languages } from './data.js';
 
 const mainElement = document.querySelector('#container');
 const score = document.querySelector('.score');
@@ -9,6 +10,22 @@ const end = document.querySelector('.end');
 const resetBtn = document.querySelector('#resetBtn');
 const bodyElement = document.querySelector('body');
 const homeBtn = document.querySelector('.homeBtn');
+//----------------------------------------------------
+const languagesElement = document.getElementById('language');
+const link = document.querySelectorAll('a'); // me devuelve un array al seleccionar mas de un elemento
+
+// elementos de la primera pantalla
+const title = document.getElementById('welcome');
+const goal = document.querySelector('.objetive');
+const btnStart = document.getElementById('startBtn');
+
+// elementos de la segunda pantalla
+const secondTitle = document.querySelector('.title');
+const contador = document.getElementById('attemptsH2');
+
+// elementos de la tercera pantalla
+const congrats = document.getElementById('congrats');
+const textFinal = document.getElementById('empty');
 
 //VARIABLES GLOBALES
 let firstCard = null; // null porque  el valor aún no esta asignado
@@ -27,7 +44,7 @@ themeElement.addEventListener('click', (event) => {
   homeBtn.classList.toggle('day');
 });
 
-//--------------------------------------------
+//-----------------------------------------------
 
 resetBtn.addEventListener('click', reset);
 score.textContent = attempts; //inicializamos el contador
@@ -129,7 +146,7 @@ function checkForMatch() {
       secondCard.querySelector('.front').dataset.name;
     isMatch ? disableCards() : unReveal();
   }
-  if (pairsDiscovered === 8) {
+  if (pairsDiscovered === 1) {
     setTimeout(() => {
       hideAllPanel();
       showEnd();
@@ -148,7 +165,11 @@ function hideAllPanel() {
 function showEnd() {
   showPanel(end);
   const text = end.querySelector('#empty');
-  text.textContent = `You made it in " ${attempts} " attempts.`;
+  const aTag = document.querySelector('.active');
+  const attr = aTag.getAttribute('language');
+  const finalMessage = languages[attr].textFinal;
+  console.log(finalMessage);
+  text.textContent = `${finalMessage} "${attempts}".`;
   const endButton = end.querySelector('.homeBtn');
   endButton.addEventListener('click', () => {
     hideAllPanel();
@@ -183,12 +204,30 @@ function resetValues() {
   lockBoard = false;
 }
 
-export {
-  suffledArray,
-  generateCards,
-  reset,
-  main,
-  hideAllPanel,
-  showCenter,
-  showPanel,
-};
+// ----------------------------------------------------
+// función con evento click para poder modificar el idioma
+link.forEach((event) => {
+  event.addEventListener('click', () => {
+    languagesElement.querySelector('.active').classList.remove('active');
+    event.classList.add('active');
+
+    const attr = event.getAttribute('language');
+
+    // modificando el idioma de la primera pantalla
+    title.textContent = languages[attr].firstTitle;
+    goal.textContent = languages[attr].goal;
+    btnStart.textContent = languages[attr].buttonStart;
+
+    // modificando el idioma de la segunda pantalla
+    secondTitle.textContent = languages[attr].secondTitle;
+    contador.textContent = languages[attr].attempts;
+    resetBtn.textContent = languages[attr].buttonReset;
+
+    // modificando el idioma de la última pantalla
+    congrats.textContent = languages[attr].thirdTitle;
+    textFinal.textContent = languages[attr].textFinal;
+    homeBtn.textContent = languages[attr].buttonHome;
+  });
+});
+
+export { hideAllPanel, showCenter, showPanel };
