@@ -50,7 +50,7 @@
 }
 
 body {
-  height: 100vh;
+  min-height: 100vh;
   min-width: 80vw;
   background-color: var(--background);
   border: 0.5rem solid var(--white);
@@ -59,7 +59,6 @@ body {
   flex-direction: column;
   justify-content: center;
   font-family: var(--fontFamily);
-  overflow-y: hidden;
 }
 
 /* -----------------Theme----------------------------- */
