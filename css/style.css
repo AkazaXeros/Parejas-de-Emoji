@@ -101,12 +101,6 @@ main {
   align-items: center;
 }
 
-section#attempts {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
 section.panel {
   min-height: 100vh;
   padding: 2rem;
@@ -117,6 +111,25 @@ section.panel {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+}
+
+/*-----------LANGUAGES--------------*/
+div#language {
+  display: flex;
+  gap: 2rem;
+}
+
+div#language a {
+  color: var(--green);
+  font-size: 2rem;
+  text-decoration: none;
+}
+/*------------------------*/
+
+section#attempts {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 section.start,
@@ -159,7 +172,7 @@ button#startBtn {
   display: none;
 }
 
-h1 {
+h1.title {
   font-size: 2.8rem;
 }
 

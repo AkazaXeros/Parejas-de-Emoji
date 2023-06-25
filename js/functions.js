@@ -1,5 +1,6 @@
 'use strict';
 import { emojisArray } from './data.js';
+import { languages } from './data.js';
 
 const mainElement = document.querySelector('#container');
 const score = document.querySelector('.score');
@@ -192,3 +193,47 @@ export {
   showCenter,
   showPanel,
 };
+
+// -----------------------------------
+// variables para seleccionar cada elemento
+
+const languagesElement = document.getElementById('language');
+const link = document.querySelectorAll('a'); // me devuelve un array al seleccionar mas de un elemento
+
+// elementos de la primera pantalla
+const title = document.getElementById('welcome');
+const goal = document.querySelector('.objetive');
+const btnStart = document.getElementById('startBtn');
+
+// elementos de la segunda pantalla
+const secondTitle = document.querySelector('.title');
+const contador = document.getElementById('attempts');
+
+// elementos de la tercera pantalla
+const congrats = document.getElementById('congrats');
+const textFinal = document.getElementById('empty');
+
+// función con evento click para poder modificar el idioma
+link.forEach((event) => {
+  event.addEventListener('click', () => {
+    languagesElement.querySelector('.active').classList.remove('active');
+    event.classList.add('active');
+
+    const attr = event.getAttribute('language');
+
+    // modificando el idioma de la primera pantalla
+    title.textContent = languages[attr].firstTitle;
+    goal.textContent = languages[attr].goal;
+    btnStart.textContent = languages[attr].buttonStart;
+
+    // modificando el idioma de la segunda pantalla
+    secondTitle.textContent = languages[attr].secondTitle;
+    contador.textContent = languages[attr].attempts;
+    resetBtn.textContent = languages[attr].buttonReset;
+
+    // modificando el idioma de la última pantalla
+    congrats.textContent = languages[attr].thirdTitle;
+    textFinal.textContent = languages[attr].textFinal;
+    homeBtn.textContent = languages[attr].buttonHome;
+  });
+});

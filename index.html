@@ -11,9 +11,14 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="icon" href="/img/final-favicon-modified.png" />
   </head>
-
+  <!-- primera pantalla -->
   <body>
     <section class="panel start hidden">
+      <div id="language">
+        <a href="#" language="english" class="active">EN</a>
+        <a href="#" language="spanish">ES</a>
+      </div>
+
       <p id="welcome">Welcome to the memory card game</p>
       <p class="objetive">
         The goal of the game is to match all the pairs of emojis by flipping the
@@ -22,9 +27,10 @@
       <button id="startBtn" class="cta">Start</button>
     </section>
 
+    <!-- pantalla central -->
     <main class="panel center hidden">
       <header>
-        <h1>Memory Card Game</h1>
+        <h1 class="title">Memory Card Game</h1>
         <div id="theme" src="" alt="Icon theme"></div>
       </header>
 
@@ -37,6 +43,8 @@
 
       <footer>Developed by ©Nur, San, Sus, and Will 2023</footer>
     </main>
+
+    <!-- última pantalla -->
     <section class="panel end hidden">
       <p id="congrats">Congratulations!!!</p>
       <p id="empty"></p>
