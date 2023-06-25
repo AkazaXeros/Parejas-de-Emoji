@@ -163,8 +163,6 @@ p#empty {
 
 p#congrats {
   font-size: 2.8rem;
-  translate: 0 -20px;
-  translate: 0 0;
 }
 
 button#startBtn:hover,
@@ -380,7 +378,7 @@ button.homeBtn {
 
   button#resetBtn,
   button#startBtn,
-  button#homeBtn {
+  button.homeBtn {
     padding: 5px 90px;
     border-radius: 15px;
     font-size: 2rem;
