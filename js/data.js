@@ -87,7 +87,7 @@ export const languages = {
     buttonStart: 'EMPEZAR',
     secondTitle: 'PAREJAS DE CARTAS',
     attempts: 'INTENTOS: ',
-    buttonReset: 'RESETEAR',
+    buttonReset: 'REINICIAR',
     thirdTitle: 'FELICIDADES!!!',
     textFinal: `Los intentos que te ha tomado han sido`,
     buttonHome: 'INICIO',

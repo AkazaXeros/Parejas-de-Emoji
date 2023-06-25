@@ -30,7 +30,7 @@ const textFinal = document.getElementById('empty');
 //VARIABLES GLOBALES
 let firstCard = null; // null porque  el valor aún no esta asignado
 let secondCard = null;
-export let attempts = 0;
+let attempts = 0;
 let pairsDiscovered = 0;
 let lockBoard = false; // teniamos un problema de que podiamos clicar dos veces a la primera carta, dandole así el valor de la primera carta a la segunda también y ya no seguia el juego. Tambien se podian clicar mas de dos cartas a la vez.
 
@@ -44,7 +44,7 @@ themeElement.addEventListener('click', (event) => {
   homeBtn.classList.toggle('day');
 });
 
-//--------------------------------------------
+//-----------------------------------------------
 
 resetBtn.addEventListener('click', reset);
 score.textContent = attempts; //inicializamos el contador
@@ -146,7 +146,7 @@ function checkForMatch() {
       secondCard.querySelector('.front').dataset.name;
     isMatch ? disableCards() : unReveal();
   }
-  if (pairsDiscovered === 1) {
+  if (pairsDiscovered === 8) {
     setTimeout(() => {
       hideAllPanel();
       showEnd();
@@ -204,7 +204,7 @@ function resetValues() {
   lockBoard = false;
 }
 
-// -----------------------------------
+// ----------------------------------------------------
 // función con evento click para poder modificar el idioma
 link.forEach((event) => {
   event.addEventListener('click', () => {
