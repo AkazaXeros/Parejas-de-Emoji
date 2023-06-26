@@ -168,7 +168,6 @@ function showEnd() {
   const aTag = document.querySelector('.active');
   const attr = aTag.getAttribute('language');
   const finalMessage = languages[attr].textFinal;
-  console.log(finalMessage);
   text.textContent = `${finalMessage} "${attempts}".`;
   const endButton = end.querySelector('.homeBtn');
   endButton.addEventListener('click', () => {
