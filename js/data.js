@@ -69,7 +69,7 @@ export const emojisArray = [
 export const languages = {
   english: {
     selector: 'EN',
-    firstTitle: 'WELCOME TO THE MEMORY CARD GAME',
+    firstTitle: 'Welcome to the Memory Card Game',
     goal: 'The goal of the game is to match all the pairs of emojis by flipping the cards.',
     buttonStart: 'START',
     secondTitle: 'MEMORY CARD GAME',
@@ -82,7 +82,7 @@ export const languages = {
 
   spanish: {
     selector: 'ES',
-    firstTitle: 'BIENVENIDO AL JUEGO PAREJAS DE CARTAS',
+    firstTitle: 'Bienvenido al juego Parejas de Cartas',
     goal: 'El objetivo del juego es encontrar todas las parejas de emojis volteando las cartas.',
     buttonStart: 'EMPEZAR',
     secondTitle: 'PAREJAS DE CARTAS',
