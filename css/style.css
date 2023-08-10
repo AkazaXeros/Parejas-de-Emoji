@@ -45,12 +45,10 @@
   background-color: var(--Awhite);
   font-family: var(--fontFamily);
   color: var(--green);
-  /* el boton va de var:( --background); 
-  las letras de dentro del boton van var(--Awhite)*/
 }
 
 body {
-  min-height: 100vh;
+  max-height: 100svh;
   min-width: 80vw;
   background-color: var(--background);
   border: 0.5rem solid var(--white);
@@ -96,6 +94,7 @@ header {
 }
 
 main {
+  min-height: 100svh;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
@@ -104,9 +103,9 @@ main {
 }
 
 section.panel {
-  min-height: 100vh;
+  height: 100svh;
   padding: 2rem;
-  border: 0.5rem solid var(--white);
+  /* border: 0.5rem solid var(--white); */
   font-size: 2rem;
   text-align: center;
   display: flex;
