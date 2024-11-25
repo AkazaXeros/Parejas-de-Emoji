@@ -95,7 +95,7 @@ function reveal(event) {
     //si firstcard no tiene valor asignado (es decir es null) entonces se le asigna el valor de la carta atual (card) a la variable
   }
   secondCard = card;
-  //si secondcard no tiene valor asignado (es decir es null) entonces se le asigna el valor de la carta atual (card) a la variable
+  //si secondcard no tiene valor asignado (es decir es null) entonces se le asigna el valor de la carta actual (card) a la variable
   attempts++; //+1 intento cuando cliquemos dos cartas
   score.textContent = attempts; //actualiza el contador
   lockBoard = true;

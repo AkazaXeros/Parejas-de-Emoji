@@ -48,7 +48,7 @@
 }
 
 body {
-  max-height: 100svh;
+  min-height: 100svh;
   min-width: 80vw;
   background-color: var(--background);
   border: 0.5rem solid var(--white);
